@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { resetPassword } from "../redux/actions/authActions"; // Import the resetPassword action
+import { resetPassword } from "../../redux/actions/authActions"; // Import the resetPassword action
+import { AppDispatch } from "../../redux/store"; // Import AppDispatch
 
 const ResetPassword: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>(); // Use AppDispatch type for dispatch
   const [email, setEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");

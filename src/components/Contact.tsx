@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { submitContactForm } from "../services/api"; // Import the API function
-import "../assets/css/style.css"; // Import your existing styles
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({

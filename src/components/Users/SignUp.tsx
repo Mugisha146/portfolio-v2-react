@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { signUp } from "../redux/actions/authActions"; // Import the signUp action
+import { signUp } from "../../redux/actions/authActions"; // Import the signUp action
+import { AppDispatch } from "../../redux/store"; // Import AppDispatch
 
 const SignUp: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>(); // Use AppDispatch type for dispatch
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

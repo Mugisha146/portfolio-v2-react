@@ -1,6 +1,5 @@
 import React from "react";
 
-import "../assets/css/style.css"; 
 
 const Home: React.FC = () => {
   

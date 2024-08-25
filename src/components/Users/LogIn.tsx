@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import api from "../services/api"; // Import the API module
-import { logIn } from "../redux/actions/authActions"; // Import the logIn action
+import { logIn } from "../../redux/actions/authActions";
+import { AppDispatch } from "../../redux/store"; // Import AppDispatch
 
 const LogIn: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>(); // Use AppDispatch type for dispatch
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -12,10 +12,10 @@ const LogIn: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await api.post("/login", { email, password });
-      dispatch(logIn(response.data)); // Dispatch login action with user data
-    } catch (error) {
-      console.error(error);
+      await dispatch(logIn({ email, password })); // Dispatch the thunk action with credentials
+      setError(null); // Clear any previous error
+    } catch (err) {
+      console.error(err);
       setError("Login failed. Please check your credentials.");
     }
   };
