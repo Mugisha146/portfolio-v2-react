@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProjects } from "../redux/slices/projectsSlice";
 import { RootState, AppDispatch } from "../redux/store";
+import "../styles/index.css";
 
 const Projects: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();

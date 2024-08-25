@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { resetPassword } from "../../redux/actions/authActions"; // Import the resetPassword action
-import { AppDispatch } from "../../redux/store"; // Import AppDispatch
+import { resetPassword } from "../../redux/actions/authActions";
+import { AppDispatch } from "../../redux/store"; 
+import "../../styles/index.css";
 
 const ResetPassword: React.FC = () => {
-  const dispatch = useDispatch<AppDispatch>(); // Use AppDispatch type for dispatch
+  const dispatch = useDispatch<AppDispatch>(); 
   const [email, setEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -14,7 +15,6 @@ const ResetPassword: React.FC = () => {
     if (newPassword === confirmPassword) {
       try {
         await dispatch(resetPassword({ email, newPassword }));
-        // Redirect or show success message here
       } catch (error) {
         console.error(error);
         alert("Password reset failed. Please try again.");

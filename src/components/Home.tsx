@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../styles/index.css";
 
 const Home: React.FC = () => {
   
@@ -8,7 +8,7 @@ const Home: React.FC = () => {
       <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-50"
         style={{
-          backgroundImage: `url("../../assets/images/backgroundimage.jpg")`,
+          backgroundImage: `url("../assets/images/backgroundimage.jpg")`,
         }}
       ></div>
       <div className="container mx-auto flex items-center justify-end h-full relative z-10">

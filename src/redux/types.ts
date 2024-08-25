@@ -1,4 +1,3 @@
-// src/redux/types.ts
 export interface AuthState {
   user: any | null;
   token: string | null;

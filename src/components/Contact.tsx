@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { submitContactForm } from "../services/api"; // Import the API function
+import { submitContactForm } from "../services/api"; 
+import "../styles/index.css";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -20,13 +21,11 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await submitContactForm(formData); // Call the API function
+      const response = await submitContactForm(formData);
       console.log("Form submitted successfully:", response);
-      // Optionally, you can reset the form or show a success message here
-      setFormData({ name: "", email: "", message: "" }); // Reset form fields
+      setFormData({ name: "", email: "", message: "" }); 
     } catch (error) {
       console.error("Error submitting form:", error);
-      // Handle error (e.g., show an error message)
     }
   };
 
@@ -149,7 +148,6 @@ const Contact: React.FC = () => {
                 />
               </a>
             </li>
-            {/* Add more social media links as needed */}
           </ul>
         </div>
       </div>

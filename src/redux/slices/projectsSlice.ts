@@ -35,7 +35,7 @@ const projectsSlice = createSlice({
     builder
       .addCase(fetchProjects.pending, (state) => {
         state.status = "loading";
-        state.error = null; // Reset error on new fetch
+        state.error = null; 
       })
       .addCase(fetchProjects.fulfilled, (state, action) => {
         state.status = "succeeded";

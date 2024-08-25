@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/index.css";
 
 const AboutMe: React.FC = () => {
 
@@ -91,11 +92,11 @@ const AboutMe: React.FC = () => {
           />
         </div>
       </div>
-      <div className="text-center mt-10">
+      {/* <div className="text-center mt-10">
         <Link to="/" className="text-teal-600 hover:underline">
           Back to Home
         </Link>
-      </div>
+      </div> */}
     </section>
   );
 };

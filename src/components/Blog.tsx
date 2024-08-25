@@ -1,19 +1,19 @@
-// src/components/Blog.tsx
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchBlogs } from "../redux/slices/blogSlice"; // Update the import path if necessary
-import { RootState, AppDispatch } from "../redux/store"; // Import types
+import { fetchBlogs } from "../redux/slices/blogSlice";
+import { RootState, AppDispatch } from "../redux/store"; 
 import { Link } from "react-router-dom";
+import "../styles/index.css";
 
 const Blog: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { blogs, status, error } = useSelector(
     (state: RootState) => state.blogs
-  ); // Adjust according to your state structure
+  ); 
 
   useEffect(() => {
     if (status === "idle") {
-      dispatch(fetchBlogs()); // Fetch blogs when the component mounts
+      dispatch(fetchBlogs()); 
     }
   }, [status, dispatch]);
 

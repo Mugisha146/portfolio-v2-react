@@ -9,7 +9,6 @@ const api: AxiosInstance = axios.create({
   },
 });
 
-// API methods
 export const logIn = async (credentials: {
   email: string;
   password: string;
@@ -50,54 +49,51 @@ export const resetPassword = async (data: {
   }
 };
 
-// Function to submit the contact form
+
 export const submitContactForm = async (formData: {
   name: string;
   email: string;
   message: string;
 }) => {
   try {
-    const response = await axios.post(`${API_URL}api/contact`, formData); // Change to your actual endpoint
+    const response = await axios.post(`${API_URL}api/contact`, formData);
     return response.data;
   } catch (error) {
     console.error("Error submitting contact form:", error);
-    throw error; // Re-throw to be handled by calling function
+    throw error;
   }
 };
 
 export const submitEmail = async (email: string) => {
   try {
     const response = await axios.post(`${API_URL}api/subscribe`, { email });
-    return response.data; // Adjust according to your API response
+    return response.data; 
   } catch (error) {
     console.error("Error subscribing email:", error);
-    throw error; // Re-throw to be handled by calling function
+    throw error;
   }
 };
 
 export const fetchData = async (endpoint: string) => {
   try {
     const response = await axios.get(`${API_URL}${endpoint}`);
-    return response.data; // Return data directly
+    return response.data; 
   } catch (error) {
     console.error("Error fetching data:", error);
-    throw error; // Re-throw to be handled by calling function
+    throw error; 
   }
 };
 
-// Function to get projects
 export const getProjects = async () => {
-  return await fetchData("api/projects"); // Directly return the result
+  return await fetchData("api/projects");
 };
 
-// Function to get skills
 export const getSkills = async () => {
-  return await fetchData("api/skills"); // Directly return the result
+  return await fetchData("api/skills"); 
 };
 
-// Function to get blogs
 export const getBlogs = async () => {
-  return await fetchData("api/blogs"); // Directly return the result
+  return await fetchData("api/blogs");
 };
 
 export default {
@@ -106,4 +102,4 @@ export default {
   getBlogs,
   submitContactForm,
   submitEmail,
-}; // Export as an object to allow further expansion
+}; 

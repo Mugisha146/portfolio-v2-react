@@ -21,12 +21,11 @@ export const logIn =
       const response = await apiLogIn(credentials);
       dispatch({ type: LOG_IN_SUCCESS, payload: response });
     } catch (error: unknown) {
-      // Cast error to 'unknown'
-      const err = error as any; // Cast error to 'any' or define a specific error interface if needed
+      const err = error as any; 
       console.error("Login error:", err);
       const errorMessage = err.response
         ? err.response.data?.message || "Login failed"
-        : "Network error occurred"; // Handle network errors
+        : "Network error occurred";
       dispatch({
         type: LOG_IN_FAILURE,
         payload: errorMessage,
@@ -42,12 +41,11 @@ export const signUp =
       const response = await apiSignUp(userData);
       dispatch({ type: SIGN_UP_SUCCESS, payload: response });
     } catch (error: unknown) {
-      // Cast error to 'unknown'
-      const err = error as any; // Cast error to 'any' or define a specific error interface if needed
+      const err = error as any;
       console.error("Sign up error:", err);
       const errorMessage = err.response
         ? err.response.data?.message || "Sign up failed"
-        : "Network error occurred"; // Handle network errors
+        : "Network error occurred";
       dispatch({
         type: SIGN_UP_FAILURE,
         payload: errorMessage,
@@ -63,12 +61,11 @@ export const resetPassword =
       const response = await apiResetPassword(data);
       dispatch({ type: RESET_PASSWORD_SUCCESS, payload: response });
     } catch (error: unknown) {
-      // Cast error to 'unknown'
-      const err = error as any; // Cast error to 'any' or define a specific error interface if needed
+      const err = error as any;
       console.error("Reset password error:", err);
       const errorMessage = err.response
         ? err.response.data?.message || "Reset password failed"
-        : "Network error occurred"; // Handle network errors
+        : "Network error occurred";
       dispatch({
         type: RESET_PASSWORD_FAILURE,
         payload: errorMessage,
