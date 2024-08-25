@@ -1,8 +1,7 @@
-// src/redux/slices/authSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface AuthState {
-  user: { email: string } | null; // Modify as per your user structure
+  user: { email: string } | null; 
   isAuthenticated: boolean;
   error: string | null;
 }
@@ -33,8 +32,6 @@ const authSlice = createSlice({
   },
 });
 
-// Export actions
 export const { logInSuccess, logInFailure, logOut } = authSlice.actions;
 
-// Export reducer
 export default authSlice.reducer;

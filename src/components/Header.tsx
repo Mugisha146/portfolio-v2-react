@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "../styles/index.css";
 const Header: React.FC = () => {
   return (
     <section id="nav" className="bg-blue-100">
@@ -49,11 +49,11 @@ const Header: React.FC = () => {
             </li>
             <li>
               <Link
-                to="/register"
+                to="/SignUp"
                 id="scrollToSignUp"
                 className="bg-white text-black py-2 px-4 rounded-lg"
               >
-                Register
+                SignUp
               </Link>
             </li>
           </ul>

@@ -1,7 +1,9 @@
-// src/components/Footer.tsx
 import React, { useState } from "react";
-import { submitEmail } from "../services/api"; // Import the API function
+import { submitEmail } from "../services/api";
 import { Link } from "react-router-dom";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import "../styles/index.css";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -13,9 +15,9 @@ const Footer = () => {
     try {
       await submitEmail(email);
       setSuccess(true);
-      setEmail(""); // Clear input field after submission
+      setEmail("");
     } catch (err) {
-      setError(error); // Handle error
+      setError(error); 
       console.error(err);
     }
   };

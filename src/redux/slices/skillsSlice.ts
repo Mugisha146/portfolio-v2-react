@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
-import api from "../../services/api"; // Import your Axios instance
+import api from "../../services/api"; 
 
 interface Skill {
   imgSrc: string;
@@ -17,10 +17,10 @@ const initialState: SkillsState = {
   status: "idle",
 };
 
-// Thunk to fetch skills
+
 export const fetchSkills = createAsyncThunk("skills/fetchSkills", async () => {
-  const response = await api.getSkills(); // Use the getSkills function from api.ts
-  return response; // Return the response directly
+  const response = await api.getSkills(); 
+  return response; 
 });
 
 const skillsSlice = createSlice({
@@ -36,7 +36,7 @@ const skillsSlice = createSlice({
         fetchSkills.fulfilled,
         (state, action: PayloadAction<Skill[]>) => {
           state.status = "succeeded";
-          state.skills = action.payload; // Assign payload to skills
+          state.skills = action.payload; 
         }
       )
       .addCase(fetchSkills.rejected, (state) => {

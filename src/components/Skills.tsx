@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "../redux/store";
 import { fetchSkills } from "../redux/slices/skillsSlice";
+import "../styles/index.css";
 
 const Skills: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();

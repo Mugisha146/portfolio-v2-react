@@ -7,13 +7,16 @@ export const submitContactForm = (formData: {
 }) => {
   return async (dispatch: Dispatch) => {
     try {
-      const response = await fetch("YOUR_BACKEND_API_ENDPOINT", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://portifolio-backend-api.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Something went wrong!");
@@ -21,10 +24,8 @@ export const submitContactForm = (formData: {
 
       const data = await response.json();
       dispatch({ type: "SUBMIT_CONTACT_FORM_SUCCESS", payload: data });
-      // Handle success (e.g., show a success message)
     } catch (error) {
       dispatch({ type: "SUBMIT_CONTACT_FORM_ERROR", payload: error });
-      // Handle error (e.g., show an error message)
     }
   };
 };
